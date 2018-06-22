@@ -1,0 +1,35 @@
+{
+	"Faculty_1": {
+		"First_Name": "Arpit",
+		"Last_Name": "Sharma",
+		"Photo": "https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FTCIaLUYKMhM%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTCIaLUYKMhM&docid=4fy-OLexnMV1sM&tbnid=quyLEy5RoSKvjM%3A&vet=10ahUKEwjH7Zzhwo7bAhXHTn0KHTfMDhEQMwgvKAgwCA..i&w=1280&h=720&bih=963&biw=1920&q=arpit%20sharma&ved=0ahUKEwjH7Zzhwo7bAhXHTn0KHTfMDhEQMwgvKAgwCA&iact=mrc&uact=8",
+		"Department": "CSE",
+		"Research_Area": "iOS,Web Development",
+		"Contact_Details": {
+			"Phone_no": 8457121664,
+			"Email_ID": "arpit@gmail.com"
+		}
+	},
+	"Faculty_2": {
+		"First_Name": "Dharmendra",
+		"Last_Name": "Kumar",
+		"Photo": "https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fstatic.projectmanagement.com%2Fimages%2Fprofile-photos%2F46352215.jpg&imgrefurl=https%3A%2F%2Fwww.projectmanagement.com%2Fprofile%2FDharmendraKumarMishra%2F&docid=rOUtj8vFgmLJzM&tbnid=FQwclrdym7ckXM%3A&vet=10ahUKEwjF8vXRxo7bAhVSfn0KHedBDqMQMwhoKB4wHg..i&w=550&h=467&itg=1&bih=963&biw=1920&q=dharmendra%20kumar&ved=0ahUKEwjF8vXRxo7bAhVSfn0KHedBDqMQMwhoKB4wHg&iact=mrc&uact=8",
+		"Department": "CSE",
+		"Research_Area": "Artificial Intelligence",
+		"Contact_Details": {
+			"Phone_no": 856421664,
+			"Email_ID": "dharmnedra@gmail.com"
+		}
+	},
+	"Faculty_3": {
+		"First_Name": "Praveen",
+		"Last_Name": "Kumawat",
+		"Photo": "https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F549420146549198849%2FrA-TzL9D_400x400.jpeg&imgrefurl=https%3A%2F%2Ftwitter.com%2Fpraveenkumawat4&docid=hlR0ayArh9lUzM&tbnid=ZCxCbf2_wrUYSM%3A&vet=10ahUKEwjArrOmx47bAhUWfH0KHax4DQcQMwgwKAAwAA..i&w=400&h=400&itg=1&bih=963&biw=1920&q=praveen%20kumawat&ved=0ahUKEwjArrOmx47bAhUWfH0KHax4DQcQMwgwKAAwAA&iact=mrc&uact=8",
+		"Department": "CSE",
+		"Research_Area": "Machine Learning",
+		"Contact_Details": {
+			"Phone_no": 8005616395,
+			"Email_ID": "praveen@gmail.com"
+		}
+	}
+}

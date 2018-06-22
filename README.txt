@@ -1,0 +1,1 @@
+All the folders contains proramming codes related to python and Machine Learning

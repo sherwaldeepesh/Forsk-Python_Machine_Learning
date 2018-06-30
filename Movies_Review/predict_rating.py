@@ -24,11 +24,11 @@ movies.year = movies.year.dt.year # As there are some NaN years, resulting type 
 movies.title = movies.title.str[:-7]
 
 
-
 genres_unique = pd.DataFrame(movies.genre.str.split('|').tolist()).stack().unique()
 genres_unique = pd.DataFrame(genres_unique, columns=['genre']) # Format into DataFrame to store later
 movies = movies.join(movies.genre.str.get_dummies().astype(int))
 movies.drop('genre', inplace=True, axis=1)
+
 
 
 movielens_dataset = pd.merge(pd.merge(ratings,users),movies)
@@ -162,7 +162,7 @@ merged.groupby('Cluster',as_index = False)['rating'].mean().plot(kind = 'barh')
 
   
 
-
+"""
 import time
 ratings['time'] = ratings['time'].apply(lambda x: time.strftime('%Y', time.localtime(x)))
 ratings.head()
@@ -172,8 +172,33 @@ age_rating = movielens_dataset.groupby('age',as_index = False)['rating'].mean()
 
 users_rating = movielens_dataset.groupby('user_id', as_index=False)['rating'].mean()
 
+"""
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from sklearn.metrics.pairwise import cosine_similarity
 
 #Movies_avg_Rating
 movies_rating = movielens_dataset.groupby(['movie_id',
@@ -189,17 +214,43 @@ movies_rating = movielens_dataset.groupby(['movie_id',
  'War',
  'Western'], as_index = False)['rating'].mean()  
     
-movies_rating1 = movies_rating.iloc[:,2:-1]    
+movies_rating1 = movies_rating.iloc[20:50,2:-1]    
+
 #New Movie data inserts
-data1 = np.array([0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]).reshape(1,-1)
 
-#   
-cbv = []
-for item in range(len(movies_rating1)):
-    if (movies_rating1.iloc[item].values == data1).all():
-        cbv.append(item)
+data1 = movies_rating.iloc[20:50,2:-1]    
+ 
+data2 = movies_rating.iloc[20:50,-1] 
+    
+   
+nk = []        
+for i in range(len(data1)):
+    
+    #append index matches with new data   
+    cbv = []
+    vcb = []
+    for item in range(len(movies_rating1)):
+        if cosine_similarity(movies_rating1.iloc[item].values.reshape(1,-1),data1.iloc[i].values.reshape(1,-1))>0.5:
+            cbv.append(item)
+            vcb.append(cosine_similarity(movies_rating1.iloc[item].values.reshape(1,-1),data1.iloc[i].values.reshape(1,-1))[0][0])
+    
+    acbv = pd.DataFrame(np.column_stack([cbv,vcb]),columns = ['Index_same_values','Cosine_values'])
+    
+    #Rating of rows matches with new_data
+    identified_rows = movies_rating.iloc[acbv['Index_same_values']]
+    
+    identified_rows =  identified_rows.reset_index()
+    
+    identified_r = pd.DataFrame(identified_rows['rating']*acbv['Cosine_values'],columns = ['mean_rating'])
+    
+    nk.append(identified_r['mean_rating'].mean())
 
-acbv = pd.DataFrame(cbv,columns = ['Index_same_values'])
+
+from sklearn.metrics import r2_score
+r2_score(data2,nk)
+
+
+
 
 
 

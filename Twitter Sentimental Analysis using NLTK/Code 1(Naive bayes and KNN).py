@@ -55,3 +55,4 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(labels_test,labels_pred)
 
 score = classifier.score(features_test,labels_test)
+

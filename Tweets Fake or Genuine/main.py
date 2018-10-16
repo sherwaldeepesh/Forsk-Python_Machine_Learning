@@ -36,6 +36,7 @@ from sklearn.decomposition import PCA
 pca = PCA(n_components = 2,random_state = 0)
 features = pca.fit_transform(features)
 
+#Naive_Bayes algorithm
 from sklearn.naive_bayes import GaussianNB
 classifier = GaussianNB()
 classifier.fit(features_train,labels_train)
@@ -47,7 +48,7 @@ cm = confusion_matrix(labels_test,labels_pred)
 
 score = classifier.score(features_test,labels_test)
 
-
+#KNN classifier algorithm
 from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(n_neighbors = 5, p = 2)
 classifier.fit(features_train,labels_train)

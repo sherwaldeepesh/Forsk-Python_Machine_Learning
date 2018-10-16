@@ -1,0 +1,21 @@
+Project - To identify a tweet whether it is fake or genuine
+
+Since the project is created in Spider(Anaconda)
+one can run into the parts of program too
+There is two algorithms included into it for classifying the bots and humans for their tweets
+most of the python snippets in fetch_data.py
+
+Firstly we need to fetch the data from twitter that is done using tweepy library and their api methods
+file- fetch_data.py
+
+after this with machine learning algorithms can able to classify the twitter accounts for the their tweets
+file- main.py
+
+how to run main.py
+-run upto commented "Naive_Bayes algorithm"
+-now to view the results from naive bayes algorithm run the code from commented naive_bayes algorithm to commented KNN classifer algorithm
+-to view the results from KNN classifier run the code from commented KNN classifier algorithm to end of the code
+
+
+
+to view the powerpoint file(recommended use office 365)
